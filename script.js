@@ -69,7 +69,7 @@ function saveFavorite(movie) {
     JSON.stringify(favorites)
   );
 
-  alert("Фильм добавлен ❤️");
+  alert("Фільм додано ❤️");
 }
 
 // =========================
@@ -87,7 +87,7 @@ async function translate(text) {
         body: JSON.stringify({
           q: text,
           source: "en",
-          target: "ru",
+          target: "ua",
           format: "text"
         }),
 
@@ -120,14 +120,14 @@ async function findMovie() {
   if (!movieName) {
 
     movieDiv.innerHTML =
-      "<h2>Введите название фильма</h2>";
+      "<h2>Введіть назву фільму</h2>";
 
     return;
   }
 
   // loading
   movieDiv.innerHTML =
-    "<h2>⏳ Загрузка...</h2>";
+    "<h2>⏳ Завантаження...</h2>";
 
   const url =
     `https://www.omdbapi.com/?apikey=${API_KEY}&s=${movieName}`;
@@ -199,7 +199,7 @@ async function findMovie() {
           "
         >
 
-          <h2>${titleRU}</h2>
+          <h2>${titleUA}</h2>
 
           <p>📅 ${movie.Year}</p>
 
@@ -218,7 +218,7 @@ async function findMovie() {
           <button
             onclick='saveFavorite(${JSON.stringify(movie)})'
           >
-            ❤️ Избранное
+            ❤️ Улюблене
           </button>
 
           <br><br>
@@ -232,7 +232,7 @@ async function findMovie() {
             target="_blank"
             style="color:white;"
           >
-            ▶ Смотреть трейлер
+            ▶ Дивитись трейлер
           </a>
 
         </div>
@@ -245,7 +245,7 @@ async function findMovie() {
     console.error(error);
 
     movieDiv.innerHTML =
-      "<h2>❌ Ошибка сети</h2>";
+      "<h2>❌ Помилка мережі </h2>";
 
   }
 }

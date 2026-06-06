@@ -87,7 +87,7 @@ async function translate(text) {
         body: JSON.stringify({
           q: text,
           source: "en",
-          target: "ua",
+          target: "ru",
           format: "text"
         }),
 
@@ -199,7 +199,7 @@ async function findMovie() {
           "
         >
 
-          <h2>${titleUA}</h2>
+          <h2>${titleRU}</h2>
 
           <p>📅 ${movie.Year}</p>
 
